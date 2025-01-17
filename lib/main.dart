@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pay/widgets/action_button.dart';
 import 'package:smart_pay/widgets/credit_card.dart';
 
 void main() {
@@ -72,6 +73,14 @@ class Home extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: 167),
                     color: Colors.white,
+                    child: Column(
+                      children: [
+                        SizedBox(height: 110,),
+                        // Action Button
+                        ActionButtons()
+                        // Transaction List
+                      ],
+                    ),
                   ),
                   Positioned(
                     top: 20,

@@ -23,7 +23,7 @@ class TransactionList extends StatelessWidget {
               ],
             ),
           ),
-          transactionHistory(Icons.restaurant_menu, Colors.purple.shade800,
+          transactionHistory(Icons.restaurant, Colors.red.shade800,
               'Restaurant', 'Payment', '-₹1200', Colors.blueGrey),
           Divider(
             color: Colors.grey[200],
@@ -33,7 +33,7 @@ class TransactionList extends StatelessWidget {
           Divider(
             color: Colors.grey[200],
           ),
-          transactionHistory(Icons.coffee, Colors.brown.shade700,
+          transactionHistory(Icons.coffee, Colors.yellow.shade700,
               'Amruttulya Chai', 'Payment', '-₹50', Colors.blueGrey),
           Divider(
             color: Colors.grey[200],

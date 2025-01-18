@@ -58,7 +58,7 @@ class CreditCard extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '₹500.00',
+                          '₹13.00',
                           style: TextStyle(
                               fontSize: 24,
                               fontWeight: FontWeight.bold,

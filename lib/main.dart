@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:smart_pay/widgets/action_button.dart';
 import 'package:smart_pay/widgets/credit_card.dart';
+import 'package:smart_pay/widgets/transaction_list.dart';
 
 void main() {
   runApp(const MyApp());
@@ -77,8 +78,10 @@ class Home extends StatelessWidget {
                       children: [
                         SizedBox(height: 110,),
                         // Action Button
-                        ActionButtons()
+                        ActionButtons(),
+                        SizedBox(height: 30,),
                         // Transaction List
+                        TransactionList(),
                       ],
                     ),
                   ),

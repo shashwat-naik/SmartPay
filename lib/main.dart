@@ -76,10 +76,14 @@ class Home extends StatelessWidget {
                     color: Colors.white,
                     child: Column(
                       children: [
-                        SizedBox(height: 110,),
+                        SizedBox(
+                          height: 110,
+                        ),
                         // Action Button
                         ActionButtons(),
-                        SizedBox(height: 30,),
+                        SizedBox(
+                          height: 30,
+                        ),
                         // Transaction List
                         TransactionList(),
                       ],
@@ -95,6 +99,65 @@ class Home extends StatelessWidget {
               ))
             ],
           )),
+      bottomNavigationBar: BottomAppBar(
+        color: Colors.white,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            IconButton(
+                onPressed: () {},
+                icon: Column(
+                  children: [
+                    Icon(Icons.home),
+                    Text(
+                      "Home",
+                      style: TextStyle(fontSize: 10),
+                    ),
+                  ],
+                )),
+            IconButton(
+                onPressed: () {},
+                icon: Column(
+                  children: [
+                    Icon(Icons.credit_card),
+                    Text(
+                      "My Card",
+                      style: TextStyle(fontSize: 10),
+                    ),
+                  ],
+                )),
+            FloatingActionButton(
+              onPressed: () {},
+              backgroundColor: Color.fromARGB(255, 16, 80, 98),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30)),
+              child: Icon(Icons.qr_code_scanner, color: Colors.white),
+            ),
+            IconButton(
+                onPressed: () {},
+                icon: Column(
+                  children: [
+                    Icon(Icons.bar_chart),
+                    Text(
+                      "Activity",
+                      style: TextStyle(fontSize: 10),
+                    ),
+                  ],
+                )),
+            IconButton(
+                onPressed: () {},
+                icon: Column(
+                  children: [
+                    Icon(Icons.person),
+                    Text(
+                      "Profile",
+                      style: TextStyle(fontSize: 10),
+                    ),
+                  ],
+                )),
+          ],
+        ),
+      ),
     );
   }
 }

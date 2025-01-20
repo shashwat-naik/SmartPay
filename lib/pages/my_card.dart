@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smart_pay/pages/home.dart';
 import 'package:smart_pay/widgets/credit_card.dart';
 
 class MyCard extends StatelessWidget {
@@ -55,7 +56,7 @@ class MyCard extends StatelessWidget {
                     side: BorderSide(color: Colors.grey[100]!),
                     fixedSize: Size(double.maxFinite, 55),
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
+                      borderRadius: BorderRadius.circular(30),
                     ),
                     backgroundColor: Colors.grey[100],
                     foregroundColor: Colors.black),

@@ -36,13 +36,26 @@ class _TopUpPageState extends State<TopUpPage> {
             ),
             PaymentProvider(
               image: "assets/bank_of_america.jpg",
-              name: "Bank Of America",
+              name: "M.Y Bank",
               account: "**** **** **** 1990",
-              isSelected: selectedProvider == 'Bank Of America',
+              isSelected: selectedProvider == 'M.Y Bank',
               onChanged: (value) {
                 if (value == true) {
                   setState(() {
-                    selectedProvider = 'Bank Of America';
+                    selectedProvider = 'M.Y Bank';
+                  });
+                }
+              },
+            ),
+            PaymentProvider(
+              image: "assets/us_bank.png",
+              name: "IBank",
+              account: "**** **** **** 1990",
+              isSelected: selectedProvider == 'IBank',
+              onChanged: (value) {
+                if (value == true) {
+                  setState(() {
+                    selectedProvider = 'IBank';
                   });
                 }
               },

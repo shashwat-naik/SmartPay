@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-import '../widgets/top_up_sheet.dart';
+
 
 class TopUpPage extends StatefulWidget {
   const TopUpPage({super.key});
@@ -105,16 +105,13 @@ class _TopUpPageState extends State<TopUpPage> {
             ),
             ElevatedButton(
               onPressed: () {
-                // showBarModalBottomSheet(
-                //   context: context,
-                //   shape: const RoundedRectangleBorder(
-                //       borderRadius:
-                //           BorderRadius.vertical(top: Radius.circular(20))),
-                //   builder: (context) => TopUpBottomSheet(
-                //       selectedProvider: selectedProvider,
-                //       image: getImageForProvider(selectedProvider),
-                //       account: getAccountForProvider(selectedProvider)),
-                // );
+                showBarModalBottomSheet(
+                  context: context,
+                  shape: const RoundedRectangleBorder(
+                      borderRadius:
+                          BorderRadius.vertical(top: Radius.circular(20))),
+                  builder: (context) =>  TopUpBottomSheet(),
+                );
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,

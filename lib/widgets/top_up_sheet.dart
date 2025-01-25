@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
-class TopUpSheet extends StatefulWidget {
-  const TopUpSheet({super.key});
+class TopUpBottomSheet extends StatefulWidget {
+  const TopUpBottomSheet({super.key});
 
   @override
-  State<TopUpSheet> createState() => _TopUpSheetState();
+  State<TopUpBottomSheet> createState() => _TopUpBottomSheetState();
 }
 
-class _TopUpSheetState extends State<TopUpSheet> {
+class _TopUpBottomSheetState extends State<TopUpBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold();
   }
 }

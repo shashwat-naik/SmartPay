@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:modal_bottom_sheet/modal_bottom_sheet.dart';
 
-
+import '../widgets/top_up_sheet.dart';
 
 class TopUpPage extends StatefulWidget {
   const TopUpPage({super.key});
@@ -11,33 +11,32 @@ class TopUpPage extends StatefulWidget {
 }
 
 class _TopUpPageState extends State<TopUpPage> {
-  String selectedProvider = 'Bank of America';
+  String selectedProvider = 'M.Y Bank';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton.outlined(
           onPressed: () => Navigator.pop(context),
-          icon: Icon(Icons.arrow_back_ios_new),
+          icon: const Icon(Icons.arrow_back_ios_new),
         ),
-        title: Text("Top Up"),
+        title: const Text("Top Up"),
       ),
       body: SingleChildScrollView(
-        padding: EdgeInsets.all(25),
+        padding: const EdgeInsets.all(25),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
+            const Text(
               "Bank Transfer",
               style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
             ),
-            SizedBox(
-              height: 15,
-            ),
+            const SizedBox(height: 15),
             PaymentProvider(
               image: "assets/bank_of_america.jpg",
               name: "M.Y Bank",
-              account: "**** **** **** 1990",
+              account: "**** **** **** 1118",
               isSelected: selectedProvider == 'M.Y Bank',
               onChanged: (value) {
                 if (value == true) {
@@ -50,7 +49,7 @@ class _TopUpPageState extends State<TopUpPage> {
             PaymentProvider(
               image: "assets/us_bank.png",
               name: "IBank",
-              account: "**** **** **** 1990",
+              account: "**** **** **** 9209",
               isSelected: selectedProvider == 'IBank',
               onChanged: (value) {
                 if (value == true) {
@@ -108,17 +107,22 @@ class _TopUpPageState extends State<TopUpPage> {
                 showBarModalBottomSheet(
                   context: context,
                   shape: const RoundedRectangleBorder(
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(20))),
-                  builder: (context) =>  TopUpBottomSheet(),
+                    borderRadius: BorderRadius.vertical(
+                      top: Radius.circular(20)
+                    )
+                  ),
+                  builder: (context) =>  TopUpBottomSheet(
+                    selectedProvider: selectedProvider,
+                    image: getImageForProvider(selectedProvider),
+                    account:getAccountForProvider(selectedProvider)
+                  ),
                 );
               },
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.black,
                   foregroundColor: Colors.white,
                   fixedSize: const Size(double.maxFinite, 60),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12))),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))),
               child: const Text(
                 "Confirm",
                 style: TextStyle(
@@ -135,10 +139,10 @@ class _TopUpPageState extends State<TopUpPage> {
 
   String getAccountForProvider(String provider) {
     switch (provider) {
-      case 'Bank of America':
+      case 'M.Y Bank':
         return '**** **** **** 1118';
-      case 'U.S Bank':
-        return '**** **** **** 1118';
+      case 'IBank':
+        return '**** **** **** 9209';
       default:
         return 'Easy Payment';
     }
@@ -146,9 +150,9 @@ class _TopUpPageState extends State<TopUpPage> {
 
   String getImageForProvider(String provider) {
     switch (provider) {
-      case 'Bank Of America':
+      case 'M.Y Bank':
         return 'assets/bank_of_america.jpg';
-      case 'U.S Bank':
+      case 'IBank':
         return 'assets/us_bank.png';
       case 'Paypal':
         return 'assets/paypal.jpg';
@@ -160,9 +164,6 @@ class _TopUpPageState extends State<TopUpPage> {
         return 'assets/default.png';
     }
   }
-}
-
-class TopUpBottomSheet {
 }
 
 class PaymentProvider extends StatelessWidget {
